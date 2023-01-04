@@ -7,32 +7,38 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family:"Roboto";
-   
-    
+    font-family:"Roboto";   
 }
 #main {
    
 display: flex;
 flex-direction: column;
-
 justify-content: space-between;
 height: 1026px;
 width: 414px;
 background-color: #eeeeee;
-overflow:hidden;
 box-sizing: border-box;
+
 }
-
+.container{
+    position: relative;
+    top: 100px;
+    background-color: #eeeeee;
+    overflow: hidden;
+    justify-content: space-between;
+}
 .top{
-
+position:fixed;
+top:0;
+z-index: 1;
 background-color: #CF2B2B;
 width: 414px;
 height: 92px;
+
 }
 
 .top h1{
-    position: relative;
+position: relative;
 width: 248px;
 height: 44px;
 left: 21px;
@@ -44,9 +50,10 @@ font-size: 44px;
 line-height: 55px;
 letter-spacing: -0.012em;
 color: #FFFFFF;
+
 }
 .top h3 {
-    position: relative;
+position: relative;
 width: 226px;
 height: 17px;
 left: 21px;
@@ -57,49 +64,116 @@ font-weight: 400;
 font-size: 18px;
 line-height: 21px;
 color: #FFFFFF;
+
 }
 h2{
-    font-family: 'Righteous';
+font-family: 'Righteous';
 font-style: normal;
 font-weight: 400;
 font-size: 26px;
 line-height: 32px;
 letter-spacing: 0.018em;
-
 color: #333333;
+
 }
 .sessao {
+    margin-bottom: 30px;
+    left: 0px;
     display: flex;
     flex-direction: row;
     justify-content:  space-around;
-    background-color: red;
-    height: 258px;
-    width: 580px;
+    background-color: #eeeeee;
+    height: 216px;
+    width: 550px;
     overflow-x: scroll;
 
 }
 .card{
-    display: flex;
-    flex-direction: row;
-    justify-content:  space-between;
-    width: 172px;
-    height: 216px;
-    background: #FFFFFF;
+display: flex;
+flex-direction: column;
+height: 100%;
+width: 172px;
+background:  white;
 box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25);
 border-radius: 9px;
+margin-left: 15px;
 
 }
+
 .footer{
+position: fixed;
+bottom: 0;
+z-index: 1;
 Width:414px;
 Height:92px;
-background-color: green;
+background-color: white;
 }
 .btnPedir{
-    position: relative;
+ position: relative;
 width: 364px;
 height: 61px;
 left: 25px;
 top: 10px;
 background: #CBCBCB;
 border-radius: 50px;
+}
+img{
+width: 144px;
+height: 87px;
+margin: 0 14px;
+margin-top: 18px;
+border-radius: 4px;
+}
+
+.titulo{
+margin-left: 13px;
+height: 25px;
+background-color: #eeeeee;
+margin-top: 15px;
+margin-bottom: 15px;
+
+
+}
+
+.h2-titulocomida{  
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+color: #333333;
+}
+
+.p-subtitulo {
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 300;
+font-size: 15px;
+line-height: 18px;
+color: #A6A6A6;
+}
+
+.p-preco{
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+
+color: #000000;
+}
+.div-tituloCard{
+    position: relative;
+    top: 20px;
+    width: 100%;
+    background-color: aqua;
+}
+.div-innerCard{
+ margin-left: 13px;
+ margin-top: 3px;
+}
+.div-innerCard img{
+    margin-left:0px;
+   
 }
