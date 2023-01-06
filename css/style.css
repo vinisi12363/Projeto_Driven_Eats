@@ -178,8 +178,12 @@ color: #000000;
 
 .svg-icon{
     display: none;
+    font-size: 19px;
+    position:relative;
+    bottom: 15px;
+    left: 125px;
 }
 
 .selecionado {
-    border: 5px solid #32b72f;
+    border: 3px solid #32b72f;
 }
