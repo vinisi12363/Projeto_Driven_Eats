@@ -253,7 +253,7 @@ color: #000000;
 }
 .p-btnFecharPedido{
     background:#50d074;
-    Font-family: 'Roboto';
+    Font-family: 'Roboto' , sans-serif;
     Font-style: Bold;
     Font-size: 22px;
     Line-height: 26px;

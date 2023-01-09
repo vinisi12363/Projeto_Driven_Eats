@@ -23,7 +23,7 @@ function divSelecionada_comida(divSelecionada){    // função do prato , fazer 
     // verificando se houve click de seleção anterior e limpando.
     const ion_icon=divSelecionada.querySelector(".svg-icon");
 
-    ion_icon.classList.remove('icon-hidden');  
+  
     
     const divClicadaAnteriormente = divSelecionada.parentElement.querySelector ('.selecionado');
     
@@ -34,9 +34,10 @@ function divSelecionada_comida(divSelecionada){    // função do prato , fazer 
         
         }
 
-  
+        ion_icon.classList.remove('icon-hidden');  
+        divSelecionada.classList.toggle ('selecionado');
          // então a partir daqui, tudo que fizer com a divClicada vai acontecer com a div real la no html.
-    divSelecionada.classList.toggle ('selecionado');
+   
 
     // pegando o valor do prato 
     const preco=divSelecionada.querySelector('.p-preco').innerHTML;
