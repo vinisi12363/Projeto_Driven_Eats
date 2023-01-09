@@ -1,5 +1,5 @@
 *{
-    font-family:"Roboto";
+    font-family:"Roboto", sans-serif;
     box-sizing: border-box;
 }
 body{
@@ -7,7 +7,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family:"Roboto";   
+    font-family:"Roboto", sans-serif;   
 }
 #main {
    
@@ -44,7 +44,7 @@ width: 248px;
 height: 44px;
 left: 21px;
 top: 8px;
-font-family: 'Righteous';
+font-family: 'Righteous', cursive;
 font-style: normal;
 font-weight: 400;
 font-size: 44px;
@@ -59,7 +59,7 @@ width: 226px;
 height: 17px;
 left: 21px;
 top: 17px;
-font-family: 'Roboto';
+font-family: 'Roboto', sans-serif;
 font-style: normal;
 font-weight: 400;
 font-size: 18px;
@@ -68,7 +68,7 @@ color: #FFFFFF;
 
 }
 h2{
-font-family: 'Righteous';
+font-family: 'Righteous', cursive;
 font-style: normal;
 font-weight: 400;
 font-size: 26px;
@@ -93,10 +93,14 @@ color: #333333;
 }
 
 .card{
+position: relative;
 display: flex;
-flex-direction: column;
-height: 100%;
-width: 172px;
+flex-direction: column; 
+justify-content: space-around;
+padding-left: 10px;
+padding-right: 10px;
+padding-bottom: 8px;
+min-width: 172px;
 background:  white;
 border-radius: 9px;
 margin-left: 15px;
@@ -146,7 +150,7 @@ margin-bottom: 15px;
 
 .h2-titulocomida{  
 
-font-family: 'Roboto';
+font-family: 'Roboto', sans-serif;
 font-style: normal;
 font-weight: 700;
 font-size: 16px;
@@ -155,7 +159,7 @@ color: #333333;
 }
 .h2-titulocomida{  
 
-font-family: 'Roboto';
+font-family: 'Roboto', sans-serif;
 font-style: normal;
 font-weight: 700;
 font-size: 16px;
@@ -164,28 +168,28 @@ color: #333333;
 }
 .h2-tituloBebida{  
 
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 19px;
     color: #333333;
-    }
+}
 
-    .h2-tituloSobremesa{  
+.h2-tituloSobremesa{  
 
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 19px;
-        color: #333333;
-        }
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: #333333;
+}
         
 
 
 .p-subtitulo {
-font-family: 'Roboto';
+font-family: 'Roboto', sans-serif;
 font-style: normal;
 font-weight: 300;
 font-size: 15px;
@@ -194,7 +198,7 @@ color: #A6A6A6;
 }
 
 .p-preco{
-font-family: 'Roboto';
+font-family: 'Roboto', sans-serif;
 font-style: normal;
 font-weight: 400;
 font-size: 16px;
@@ -225,9 +229,8 @@ color: #000000;
 .svg-icon{
     position: absolute;
     font-size: 19px;
-    
-    bottom: 15px;
-    left: 125px;
+    bottom:  12px;
+    left: 140px;
 }
 
 .selecionado {
