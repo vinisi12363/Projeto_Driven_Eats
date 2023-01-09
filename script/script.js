@@ -122,27 +122,22 @@ function divSelecionada_bebida(divSelecionada){    // função do prato , fazer 
 
 } 
 function divSelecionada_sobremesa(divSelecionada){    // função do prato , fazer mais duas vezes para os outros itens
-    // verificando se houve click de seleção anterior e limpando.
+   
     const ion_icon=divSelecionada.querySelector(".svg-icon");
+    ion_icon.classList.remove('icon-hidden');  
 
-    ion_icon.classList.remove('icon-hidden');  // FAZER uma function pra esconder o icone quando trocar de elemento selecionado.
-    
+     // verificando se houve click de seleção anterior e limpando.
     const divClicadaAnteriormente = divSelecionada.parentElement.querySelector ('.selecionado');
- 
     if (divClicadaAnteriormente !== null ){
         divClicadaAnteriormente.querySelector(".svg-icon").classList.add('icon-hidden');
         divClicadaAnteriormente.classList.remove ('selecionado');
         
-        }
+    }
 
-   // let divClicada=document.querySelector (divSelecionada); // essa variável serve para fazer um link com a  tag que foi criada...
-         // então a partir daqui, tudo que fizer com a divClicada vai acontecer com a div real la no html.
     divSelecionada.classList.toggle ('selecionado');
 
     // pegando o valor do prato 
     const preco=divSelecionada.querySelector('.p-preco').innerHTML;
-
-   
     const array = preco.split('');
     let numArray = [];
     let valor=0;
@@ -160,10 +155,9 @@ function divSelecionada_sobremesa(divSelecionada){    // função do prato , faz
     } 
     
     valor= parseFloat (numArray.join("")); // transforma o vetor em string e depois em float.
-   
+
     sobremesa = divSelecionada.querySelector('.h2-tituloSobremesa').innerHTML;
     vlrSobremes=valor;
-   
     
     continuar();
 } 
@@ -172,19 +166,19 @@ function divSelecionada_sobremesa(divSelecionada){    // função do prato , faz
 
 
 function continuar(){  /// função chamada ao final de cada seleção para verificar se o usuario pode continuar.
- if (comida != undefined && bebida != undefined && sobremesa != undefined) {
-    // habilita o botão de fechar pedido.
- 
-    document.getElementById("btnPedir").removeAttribute("disabled");
-    document.getElementById("btnPedir").innerHTML="Fechar pedido";
-    document.getElementById("btnPedir").style.color="#FFFFFF";
-    document.getElementById("btnPedir").style.fontStyle="bold";
-    document.getElementById("btnPedir").style.background ="#32B72F";
+    if (comida != undefined && bebida != undefined && sobremesa != undefined) {
+        // habilita o botão de fechar pedido.
+    
+        document.getElementById("btnPedir").removeAttribute("disabled");
+        document.getElementById("btnPedir").innerHTML="Fechar pedido";
+        document.getElementById("btnPedir").style.color="#FFFFFF";
+        document.getElementById("btnPedir").style.fontStyle="bold";
+        document.getElementById("btnPedir").style.background ="#32B72F";
 
 
-} else {  
-    document.getElementById("btnPedir").setAttribute("disabled","");
-}
+    } else {  
+        document.getElementById("btnPedir").setAttribute("disabled","");
+    }
 
 
 }
