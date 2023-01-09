@@ -43,7 +43,6 @@ function divSelecionada_comida(divSelecionada){    // função do prato , fazer 
     const preco=divSelecionada.querySelector('.p-preco').innerHTML;
   
    
-   
     const array = preco.split('');
     let numArray = [];
     let valor=0;
@@ -62,10 +61,9 @@ function divSelecionada_comida(divSelecionada){    // função do prato , fazer 
     
     valor= parseFloat (numArray.join("")); // transforma o vetor em string e depois em float.
    
-    comida = document.querySelector('.h2-titulocomida').innerHTML;
+    comida = divSelecionada.querySelector('.h2-titulocomida').innerHTML;
     vlrComida=valor;
-    console.log("O VALOR COMIDA VALE:"+vlrComida);
-    console.log ("o prato selecionado foi: "+comida);
+    
 
    
     
@@ -114,10 +112,9 @@ function divSelecionada_bebida(divSelecionada){    // função do prato , fazer 
     
     valor= parseFloat (numArray.join("")); // transforma o vetor em string e depois em float.
    
-    bebida = document.querySelector('.h2-tituloBebida').innerHTML;
+    bebida = divSelecionada.querySelector('.h2-tituloBebida').innerHTML;
     vlrBebida=valor;
-    console.log("O VALOR COMIDA VALE:"+vlrBebida);
-    console.log ("o prato selecionado foi: "+bebida);
+    
 
    
     
@@ -166,9 +163,7 @@ function divSelecionada_sobremesa(divSelecionada){    // função do prato , faz
    
     sobremesa = divSelecionada.querySelector('.h2-tituloSobremesa').innerHTML;
     vlrSobremes=valor;
-    console.log("O VALOR COMIDA VALE:"+vlrSobremes);
-    console.log ("o prato selecionado foi: "+sobremesa);
-
+   
     
     continuar();
 } 
@@ -179,7 +174,7 @@ function divSelecionada_sobremesa(divSelecionada){    // função do prato , faz
 function continuar(){  /// função chamada ao final de cada seleção para verificar se o usuario pode continuar.
  if (comida != undefined && bebida != undefined && sobremesa != undefined) {
     // habilita o botão de fechar pedido.
-    console.log("botao on");
+ 
     document.getElementById("btnPedir").removeAttribute("disabled");
     document.getElementById("btnPedir").innerHTML="Fechar pedido";
     document.getElementById("btnPedir").style.color="#FFFFFF";
