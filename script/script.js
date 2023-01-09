@@ -1,4 +1,4 @@
-let valorTotal=0;
+let valorTotal=0.0;
 
 let vlrComida=0; // pegar valores  somente do prato selecionado e sobrescrever de propósito
 let vlrBebida=0; 
@@ -9,6 +9,8 @@ let comida;   // strings para adicionar na div depois que apertar o botão fecha
 let bebida;
 let sobremesa;
 
+let mensagemDeEnvio;
+
 let nome;   // armazenar endereço e nome.
 let endereco;
 document.getElementById("btnPedir").setAttribute ("disabled", "");
@@ -18,7 +20,6 @@ document.getElementById("btnPedir").setAttribute ("disabled", "");
 
 function divSelecionada_comida(divSelecionada){    // função do prato , fazer mais duas vezes para os outros itens
 
-  
     // verificando se houve click de seleção anterior e limpando.
     const ion_icon=divSelecionada.querySelector(".svg-icon");
 
@@ -185,16 +186,27 @@ function continuar(){  /// função chamada ao final de cada seleção para veri
     document.getElementById("btnPedir").style.background ="#32B72F";
 
 
-} else { 
-    
+} else {  
     document.getElementById("btnPedir").setAttribute("disabled","");
 }
-
 
 
 }
 
 function calcularTotal(){ //para calcular o valor dos pratos e lançar no final.
-    valorTotal=bebida+comida+sobremesa; // somando o valor com a variavel global , pra lançar no inner html no final.
+    valorTotal=vlrComida+vlrBebida+vlrSobremes; // somando o valor com a variavel global , pra lançar no inner html no final.
+  
 } 
+function fecharPedido(){
+    calcularTotal();
 
+     mensagemDeEnvio= "Olá, gostaria de fazer o pedido:" + 
+    "\n- Prato: " + comida +  
+    "\n- Bebida: " + bebida + 
+    "\n- Sobremesa: " + sobremesa + 
+    "\nTotal: R$ " +valorTotal.toFixed(2).replace(".", ",");
+
+    let msg = encodeURIComponent(mensagemDeEnvio);
+    window.open(`https://wa.me/557133706350?text=${msg}`);
+   
+}
