@@ -206,13 +206,14 @@ color: #000000;
     position: relative;
     top: 20px;
     width: 100%;
-    background-color: aqua;
+   
 }
 .div-innerCard{
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    background-color: #CF2B2B;
+    justify-content: space-around;
+    padding-bottom:15px;
     height: 100%;
     margin-left: 14px;
     margin-right: 14px;
@@ -222,9 +223,9 @@ color: #000000;
 
 
 .svg-icon{
-    
+    position: absolute;
     font-size: 19px;
-    position:relative;
+    
     bottom: 15px;
     left: 125px;
 }

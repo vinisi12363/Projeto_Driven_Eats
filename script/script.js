@@ -178,7 +178,7 @@ function divSelecionada_sobremesa(divSelecionada){    // função do prato , faz
 function continuar(){  /// função chamada ao final de cada seleção para verificar se o usuario pode continuar.
  if (comida != undefined && bebida != undefined && sobremesa != undefined) {
     // habilita o botão de fechar pedido.
-   
+    console.log("botao on");
     document.getElementById("btnPedir").removeAttribute("disabled");
     document.getElementById("btnPedir").innerHTML="Fechar pedido";
     document.getElementById("btnPedir").style.color="#FFFFFF";
