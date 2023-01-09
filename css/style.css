@@ -108,6 +108,7 @@ margin-left: 15px;
 }
 
 .footer{
+    
     position: fixed;
     bottom: 0;
     z-index: 1;
@@ -265,4 +266,13 @@ color: #000000;
 
 .icon-hidden{  /*setado por padrão no svg_icon*/
     display: none;
+}
+.btnPedir{
+    color: #FFFFFF;
+    text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.sobremesas{
+    padding-bottom: 5px;
 }
