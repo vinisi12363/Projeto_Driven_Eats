@@ -84,10 +84,13 @@ color: #333333;
     
     background-color: #eeeeee;
     height: 216px;
-    width: 550px;
     overflow-x: scroll;
-
+    
 }
+.sessao::-webkit-scrollbar{
+    display: none;
+}
+
 .card{
 display: flex;
 flex-direction: column;
@@ -109,11 +112,19 @@ Height:92px;
 background-color: white;
 }
 .btnPedir{
+   
+    Font-size: 20px;
+    Line-height: 23px;
+    Line-height: 100%;
+    text-align: Center;
+    Vertical-align: Top;
+    Letter-spacing: 1.8%;
  position: relative;
 width: 364px;
 height: 61px;
 left: 25px;
 top: 10px;
+border:0px;
 background: #CBCBCB;
 border-radius: 50px;
 }
@@ -143,6 +154,36 @@ font-size: 16px;
 line-height: 19px;
 color: #333333;
 }
+.h2-titulocomida{  
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+color: #333333;
+}
+.h2-tituloBebida{  
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: #333333;
+    }
+
+    .h2-tituloSobremesa{  
+
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+        color: #333333;
+        }
+        
+
 
 .p-subtitulo {
 font-family: 'Roboto';
@@ -177,7 +218,7 @@ color: #000000;
 
 
 .svg-icon{
-    display: none;
+    
     font-size: 19px;
     position:relative;
     bottom: 15px;
@@ -185,5 +226,34 @@ color: #000000;
 }
 
 .selecionado {
-    border: 3px solid #32b72f;
+    box-shadow: 0px 0px 10px -4px rgb(0 0 0 / 25%), inset 0px 0px 0px 5px #32b72f;
+}
+
+.div_fecharPedido{
+    display:none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    background-color: #50D074;
+    
+}
+.btnFecharPedido {
+    border-radius: 50px;
+    background-color:#FFFFFF;
+}
+.p-btnFecharPedido{
+    background:#50d074;
+    Font-family: 'Roboto';
+    Font-style: Bold;
+    Font-size: 22px;
+    Line-height: 26px;
+    Line-height: 100%;
+    align-items: Center;
+    Vertical-align: Center;
+    Letter-spacing: 1.8%;
+}
+
+.icon-hidden{  /*setado por padrão no svg_icon*/
+    display: none;
 }

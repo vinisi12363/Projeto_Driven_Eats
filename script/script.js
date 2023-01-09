@@ -1,28 +1,50 @@
 let valorTotal=0;
 
+let vlrComida=0; // pegar valores  somente do prato selecionado e sobrescrever de propósito
+let vlrBebida=0; 
+let vlrSobremes=0;
+
+
+let comida;   // strings para adicionar na div depois que apertar o botão fechar pedido.
+let bebida;
+let sobremesa;
+
+let nome;   // armazenar endereço e nome.
+let endereco;
+document.getElementById("btnPedir").setAttribute ("disabled", "");
+
 
 //preciso criar uma function on click pra trsnformar a borda em verde, por enquanto/
 
-function divSelecionada(divSelecionada){
+function divSelecionada_comida(divSelecionada){    // função do prato , fazer mais duas vezes para os outros itens
 
+  
     // verificando se houve click de seleção anterior e limpando.
-    const divClicadaAnteriormente = document.querySelector ('.selecionado');
-    if (divClicadaAnteriormente != null ){
-        divClicadaAnteriormente.classList.remove ('selecionado');
-        icon=document.querySelector('.svg-icon').style.display ='none'; // prguntar ao professor ou ao tutor como pegar a this dessa classe ai.
-    }
+    const ion_icon=divSelecionada.querySelector(".svg-icon");
 
-    let divClicada=document.querySelector (divSelecionada); // essa variável serve para fazer um link com a  tag que foi criada...
+    ion_icon.classList.remove('icon-hidden');  
+    
+    const divClicadaAnteriormente = divSelecionada.parentElement.querySelector ('.selecionado');
+    
+
+    if (divClicadaAnteriormente !== null ){
+        divClicadaAnteriormente.querySelector(".svg-icon").classList.add('icon-hidden');
+        divClicadaAnteriormente.classList.remove ('selecionado');
+        
+        }
+
+  
          // então a partir daqui, tudo que fizer com a divClicada vai acontecer com a div real la no html.
-    console.log(divClicada);
-    divClicada.classList.toggle ('selecionado');
+    divSelecionada.classList.toggle ('selecionado');
 
     // pegando o valor do prato 
-    const preco=document.querySelector('.p-preco');
-    const array = preco.innerHTML.split('');
+    const preco=divSelecionada.querySelector('.p-preco').innerHTML;
+  
+   
+   
+    const array = preco.split('');
     let numArray = [];
     let valor=0;
-    console.log(array); 
     for(let i=0;i<array.length;i++){   // for para pegar o valor numerico de dentro da tag p.
         
         if (array[i] === '0' ||array[i] === '1' ||array[i] === '2' ||array[i] === '3' ||array[i] === '4' ||array[i] === '5' ||array[i] === '6' ||array[i] === '7' ||array[i] === '8' ||array[i] === '9' ||array[i] === ',' ) {
@@ -37,19 +59,142 @@ function divSelecionada(divSelecionada){
     } 
     
     valor= parseFloat (numArray.join("")); // transforma o vetor em string e depois em float.
-    calcularTotal(valor); // passando  o valor pra ser somado.
-    console.log("O VALOR total é:"+valorTotal);
+   
+    comida = document.querySelector('.h2-titulocomida').innerHTML;
+    vlrComida=valor;
+    console.log("O VALOR COMIDA VALE:"+vlrComida);
+    console.log ("o prato selecionado foi: "+comida);
 
-    const icon=document.querySelector('.svg-icon').style.display ='flex';
-
-
-} 
-
-
-function calcularTotal(preco){ //para calcular o valor dos pratos e lançar no final.
-    valorTotal+=preco; // somando o valor com a variavel global , pra lançar no inner html no final.
+   
+    
+    continuar();
 
 } 
 
+function divSelecionada_bebida(divSelecionada){    // função do prato , fazer mais duas vezes para os outros itens
 
+    
+    // verificando se houve click de seleção anterior e limpando.
+    const ion_icon=divSelecionada.querySelector(".svg-icon");
+
+    ion_icon.classList.remove('icon-hidden');  
+    const divClicadaAnteriormente = divSelecionada.parentElement.querySelector ('.selecionado');
+   
+    if (divClicadaAnteriormente !== null ){
+        divClicadaAnteriormente.querySelector(".svg-icon").classList.add('icon-hidden');
+        divClicadaAnteriormente.classList.remove ('selecionado');
+        
+        }
+
+
+         // então a partir daqui, tudo que fizer com a divClicada vai acontecer com a div real la no html.
+    divSelecionada.classList.toggle ('selecionado');
+
+    // pegando o valor do prato 
+    const preco=divSelecionada.querySelector('.p-preco').innerHTML;
+    
+   
+    const array = preco.split('');
+    let numArray = [];
+    let valor=0;
+    for(let i=0;i<array.length;i++){   // for para pegar o valor numerico de dentro da tag p.
+        
+        if (array[i] === '0' ||array[i] === '1' ||array[i] === '2' ||array[i] === '3' ||array[i] === '4' ||array[i] === '5' ||array[i] === '6' ||array[i] === '7' ||array[i] === '8' ||array[i] === '9' ||array[i] === ',' ) {
+            if (array[i]===',') {
+                numArray.push('.');
+            }
+            else{
+                numArray.push(array[i]);
+            }
+        }
+
+    } 
+    
+    valor= parseFloat (numArray.join("")); // transforma o vetor em string e depois em float.
+   
+    bebida = document.querySelector('.h2-tituloBebida').innerHTML;
+    vlrBebida=valor;
+    console.log("O VALOR COMIDA VALE:"+vlrBebida);
+    console.log ("o prato selecionado foi: "+bebida);
+
+   
+    
+    continuar();
+
+} 
+function divSelecionada_sobremesa(divSelecionada){    // função do prato , fazer mais duas vezes para os outros itens
+    // verificando se houve click de seleção anterior e limpando.
+    const ion_icon=divSelecionada.querySelector(".svg-icon");
+
+    ion_icon.classList.remove('icon-hidden');  // FAZER uma function pra esconder o icone quando trocar de elemento selecionado.
+    
+    const divClicadaAnteriormente = divSelecionada.parentElement.querySelector ('.selecionado');
+ 
+    if (divClicadaAnteriormente !== null ){
+        divClicadaAnteriormente.querySelector(".svg-icon").classList.add('icon-hidden');
+        divClicadaAnteriormente.classList.remove ('selecionado');
+        
+        }
+
+   // let divClicada=document.querySelector (divSelecionada); // essa variável serve para fazer um link com a  tag que foi criada...
+         // então a partir daqui, tudo que fizer com a divClicada vai acontecer com a div real la no html.
+    divSelecionada.classList.toggle ('selecionado');
+
+    // pegando o valor do prato 
+    const preco=divSelecionada.querySelector('.p-preco').innerHTML;
+
+   
+    const array = preco.split('');
+    let numArray = [];
+    let valor=0;
+    for(let i=0;i<array.length;i++){   // for para pegar o valor numerico de dentro da tag p.
+        
+        if (array[i] === '0' ||array[i] === '1' ||array[i] === '2' ||array[i] === '3' ||array[i] === '4' ||array[i] === '5' ||array[i] === '6' ||array[i] === '7' ||array[i] === '8' ||array[i] === '9' ||array[i] === ',' ) {
+            if (array[i]===',') {
+                numArray.push('.');
+            }
+            else{
+                numArray.push(array[i]);
+            }
+        }
+
+    } 
+    
+    valor= parseFloat (numArray.join("")); // transforma o vetor em string e depois em float.
+   
+    sobremesa = divSelecionada.querySelector('.h2-tituloSobremesa').innerHTML;
+    vlrSobremes=valor;
+    console.log("O VALOR COMIDA VALE:"+vlrSobremes);
+    console.log ("o prato selecionado foi: "+sobremesa);
+
+    
+    continuar();
+} 
+
+
+
+
+function continuar(){  /// função chamada ao final de cada seleção para verificar se o usuario pode continuar.
+ if (comida != undefined && bebida != undefined && sobremesa != undefined) {
+    // habilita o botão de fechar pedido.
+   
+    document.getElementById("btnPedir").removeAttribute("disabled");
+    document.getElementById("btnPedir").innerHTML="Fechar pedido";
+    document.getElementById("btnPedir").style.color="#FFFFFF";
+    document.getElementById("btnPedir").style.fontStyle="bold";
+    document.getElementById("btnPedir").style.background ="#32B72F";
+
+
+} else { 
+    
+    document.getElementById("btnPedir").setAttribute("disabled","");
+}
+
+
+
+}
+
+function calcularTotal(){ //para calcular o valor dos pratos e lançar no final.
+    valorTotal=bebida+comida+sobremesa; // somando o valor com a variavel global , pra lançar no inner html no final.
+} 
 
