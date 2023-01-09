@@ -18,9 +18,8 @@ document.getElementById("btnPedir").setAttribute ("disabled", "");
 
 //preciso criar uma function on click pra trsnformar a borda em verde, por enquanto/
 
-function divSelecionada_comida(divSelecionada){    // função do prato , fazer mais duas vezes para os outros itens
-
-    // verificando se houve click de seleção anterior e limpando.
+function divSelecionada_comida(divSelecionada){
+       // verificando se houve click de seleção anterior e limpando.
     const ion_icon=divSelecionada.querySelector(".svg-icon");
 
   
@@ -71,25 +70,25 @@ function divSelecionada_comida(divSelecionada){    // função do prato , fazer 
 
 } 
 
-function divSelecionada_bebida(divSelecionada){    // função do prato , fazer mais duas vezes para os outros itens
+function divSelecionada_bebida(divSelecionada){    
 
     
     // verificando se houve click de seleção anterior e limpando.
     const ion_icon=divSelecionada.querySelector(".svg-icon");
 
-    ion_icon.classList.remove('icon-hidden');  
+    
     const divClicadaAnteriormente = divSelecionada.parentElement.querySelector ('.selecionado');
    
     if (divClicadaAnteriormente !== null ){
         divClicadaAnteriormente.querySelector(".svg-icon").classList.add('icon-hidden');
         divClicadaAnteriormente.classList.remove ('selecionado');
         
-        }
+    }
 
-
-         // então a partir daqui, tudo que fizer com a divClicada vai acontecer com a div real la no html.
+    ion_icon.classList.remove('icon-hidden');
     divSelecionada.classList.toggle ('selecionado');
-
+     
+  
     // pegando o valor do prato 
     const preco=divSelecionada.querySelector('.p-preco').innerHTML;
     
@@ -112,19 +111,16 @@ function divSelecionada_bebida(divSelecionada){    // função do prato , fazer 
     
     valor= parseFloat (numArray.join("")); // transforma o vetor em string e depois em float.
    
+
     bebida = divSelecionada.querySelector('.h2-tituloBebida').innerHTML;
     vlrBebida=valor;
-    
-
-   
-    
     continuar();
 
 } 
-function divSelecionada_sobremesa(divSelecionada){    // função do prato , fazer mais duas vezes para os outros itens
+function divSelecionada_sobremesa(divSelecionada){    
    
     const ion_icon=divSelecionada.querySelector(".svg-icon");
-    ion_icon.classList.remove('icon-hidden');  
+ 
 
      // verificando se houve click de seleção anterior e limpando.
     const divClicadaAnteriormente = divSelecionada.parentElement.querySelector ('.selecionado');
@@ -133,7 +129,7 @@ function divSelecionada_sobremesa(divSelecionada){    // função do prato , faz
         divClicadaAnteriormente.classList.remove ('selecionado');
         
     }
-
+    ion_icon.classList.remove('icon-hidden');  
     divSelecionada.classList.toggle ('selecionado');
 
     // pegando o valor do prato 
