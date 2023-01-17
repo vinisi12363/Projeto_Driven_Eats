@@ -194,5 +194,15 @@ function fecharPedido(){
 
     let msg = encodeURIComponent(mensagemDeEnvio);
     window.open(`https://wa.me/557133706350?text=${msg}`);
-   
+   exibirOverlay();
+}
+
+function exibirOverlay(){
+    alert("REMOVENDO O HIDDEN DO OVERLAYER");
+    const overlay=document.querySelector('.overlay');
+    overlay.classList.remove('icon-hidden');
+
+
+
+
 }
